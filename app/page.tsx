@@ -1,6 +1,6 @@
 import { zbd } from "@zbd/node";
 
-const API_KEY = process.env.API_KEY;
+const API_KEY = process.env.ZEBEDEE_API_KEY;
 const project = new zbd(API_KEY);
 
 export default async function Home() {
