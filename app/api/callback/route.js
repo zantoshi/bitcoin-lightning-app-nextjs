@@ -1,4 +1,5 @@
 import { zbd } from '@zbd/node';
+const ZBD = new zbd(process.env.ZEBEDEE_API_KEY);
 
 export async function GET(request) {
   console.log(request.data);
@@ -33,7 +34,7 @@ export async function POST(request) {
           comment: 'Tip Split!',
         };
         try {
-          const data = await zbd.sendLightningAddressPayment(payload);
+          const data = await ZBD.sendLightningAddressPayment(payload);
           console.log(data);
           if (!data.success) {
             return new Response('Split failed.', {
@@ -42,7 +43,7 @@ export async function POST(request) {
           }
         } catch (e) {
           console.log(e);
-          return new Response(`Error. ${e}`, {
+          return new Response(`Error.`, {
             status: 400,
           });
         }
