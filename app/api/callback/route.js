@@ -14,7 +14,11 @@ export async function POST(request) {
     // Fixed to use === for comparison
     const amount_sats = body.amount / 1000; // Assuming `body.amount` is directly accessible and correct
     if (amount_sats >= 100) {
-      const lightning_addresses = ['heidi@zbd.gg', 'perla@zbd.gg'];
+      const lightning_addresses = [
+        'heidi@zbd.gg',
+        'perla@zbd.gg',
+        'durablefeeling54@walletofsatoshi.com',
+      ];
       const divide_by_three = Math.floor(amount_sats / 3);
 
       for (const lightning_address of lightning_addresses) {
