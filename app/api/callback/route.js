@@ -1,5 +1,3 @@
-import { headers } from 'next/headers';
-
 export async function GET(request) {
   console.log(request.data);
 
@@ -58,6 +56,10 @@ export async function POST(request) {
       }
 
       return new Response('Splits Successful', {
+        status: 200,
+      });
+    } else {
+      return new Response('Tip amount must be greater than 100.', {
         status: 200,
       });
     }
