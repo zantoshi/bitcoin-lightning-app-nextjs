@@ -61,5 +61,9 @@ export async function POST(request) {
         status: 200,
       });
     }
+  } else {
+    return new Response('Invalid request.', {
+      status: 400,
+    });
   }
 }
