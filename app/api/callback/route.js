@@ -1,23 +1,6 @@
 export async function GET(request) {
   console.log(request.data);
 
-  //   {'confirmedAt': '2022-12-01T22:52:13.196Z',
-  //  'chargeId': '{{id}}',
-  //  'amount': '1000',
-  //  'unit': 'msats',
-  //  'slots': 0,
-  //  'staticChargeId': '{{staticChargeId}}',
-  //  'internalId': None,
-  //  'chargeRequest': 'lnbc...',
-  //  'callbackUrl': '{{callbackUrl}}',
-  //  'staticChargeRequest': 'lnurl...',
-  //  'allowedSlots': 1000,
-  //  'successMessage': 'Congratulations your payment was successful!',
-  //  'status': 'completed',
-  //  'staticChargeDescription':
-  //  'test', 'comment': '',
-  //  'senderName': 'user@zbd.gg'}
-
   return new Response('Hello there.', {
     status: 200,
   });
