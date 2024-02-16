@@ -31,7 +31,7 @@ export async function POST(request) {
 
   if (body.status === 'completed') {
     // Fixed to use === for comparison
-    const amount_sats = body.amount / 100; // Assuming `body.amount` is directly accessible and correct
+    const amount_sats = body.amount / 1000; // Assuming `body.amount` is directly accessible and correct
     if (amount_sats >= 100) {
       const lightning_addresses = ['heidi@zbd.gg', 'perla@zbd.gg'];
       const divide_by_three = Math.floor(amount_sats / 3);
