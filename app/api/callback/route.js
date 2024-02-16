@@ -5,6 +5,5 @@ export async function GET(request) {
 
   return new Response('Payment Successful', {
     status: 200,
-    headers: { referer: referer },
   });
 }
