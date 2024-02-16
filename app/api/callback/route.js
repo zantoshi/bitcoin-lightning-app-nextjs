@@ -1,3 +1,5 @@
+import { zbd } from '@zbd/node';
+
 export async function GET(request) {
   console.log(request.data);
 
@@ -31,7 +33,8 @@ export async function POST(request) {
           comment: 'Tip Split!',
         };
         try {
-          const data = await zbd.sendLightningAddressPayment(payload); // Assuming `zbd.sendLightningAddressPayment` is defined elsewhere
+          const data = await zbd.sendLightningAddressPayment(payload);
+          console.log(data);
           if (!data.success) {
             return new Response('Split failed.', {
               status: 400,
