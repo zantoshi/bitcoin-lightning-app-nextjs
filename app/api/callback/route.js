@@ -26,7 +26,7 @@ export async function POST(request) {
       for (const lightning_address of lightning_addresses) {
         console.log('lightning address ', lightning_address);
         const payload = {
-          amount: divide_by_three * 1000,
+          amount: `${divide_by_three}000`,
           lnAddress: lightning_address,
           comment: 'Tip Split!',
         };
