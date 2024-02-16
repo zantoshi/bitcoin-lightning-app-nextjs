@@ -38,6 +38,7 @@ export async function POST(request) {
             });
           }
         } catch (e) {
+          console.log(e);
           return new Response(`Error. ${e}`, {
             status: 400,
           });
