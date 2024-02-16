@@ -12,7 +12,8 @@ export async function POST(request) {
 
   if (body.status === 'completed') {
     // Fixed to use === for comparison
-    const amount_sats = body.amount / 1000; // Assuming `body.amount` is directly accessible and correct
+    let amount_sats = body.amount / 1000;
+    console.log('amount sats: ', amount_sats);
     if (amount_sats >= 100) {
       const lightning_addresses = [
         'heidi@zbd.gg',
@@ -20,11 +21,12 @@ export async function POST(request) {
         'durablefeeling54@walletofsatoshi.com',
       ];
       const divide_by_three = Math.floor(amount_sats / 3);
-
+      console.log('amount to payout: ', divide_by_three);
+      console.log('executing payouts...');
       for (const lightning_address of lightning_addresses) {
-        // Changed to `of` to get the value directly
+        console.log('lightning address ', lightning_address);
         const payload = {
-          amount: divide_by_three,
+          amount: divide_by_three * 1000,
           lnAddress: lightning_address,
           comment: 'Tip Split!',
         };
